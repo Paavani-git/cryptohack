@@ -1,1 +1,64 @@
-,pavani,pavani-VirtualBox,22.01.2021 18:31,file:///home/pavani/.config/libreoffice/4;
+CryptoHack
+ Challenges
+ SESSION:Introduction
+ 1)Finding Flags
+	submit the flag that given in challenge “crypto{y0ur_f1rst_fl4g}”
+ 2)Great Snakes
+   given code:
+		#!/usr/bin/env python3
+
+		# import this
+
+          if sys.version_info.major == 2:
+    			print("You are running Python 2, which is no longer 		supported. Please update to Python 3.")
+
+		ords = [81, 64, 75, 66, 70, 93, 73, 72, 1, 92, 109, 2, 		84, 109, 66, 75, 70, 90, 2, 92, 79]
+
+		print("Here is your flag:")
+		print("".join(chr(o ^ 0x32) for o in ords))
+    Run this code ,then you will get flag
+	Flag:crypto{z3n_0f_pyth0n}
+3)Network Attacks
+   given question:
+		Several of the challenges are dynamic and require you to talk to our challenge servers over the network. This allows you to perform man-in-the-middle attacks on people trying to communicate, or directly attack a vulnerable service. To keep things consistent, our interactive servers always send and receive JSON objects.
+
+Python makes such network communication easy with the telnetlib module. Conveniently, it's part of Python's standard library, so let's use it for now.
+
+For this challenge, connect to socket.cryptohack.org on port 11112. Send a JSON object with the key buy and value flag.
+
+The example script below contains the beginnings of a solution for you to modify, and you can reuse it for later challenges.
+
+Connect at nc socket.cryptohack.org 11112
+
+
+telnetlib_example.py
+
+By obeserving the hilated line we can replace “clothes“ by “flag”
+Then run that python program
+ ***
+	request = {
+    "buy": "flag"
+}
+***
+Flag:crypto{sh0pp1ng_f0r_fl4g5}
+
+
+
+Session: Encoding
+
+1)
+	ASCII is a 7-bit encoding standard which allows the representation of text using the integers 0-127.
+
+Using the below integer array, convert the numbers to their corresponding ASCII characters to obtain a flag.
+
+[99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]
+
+
+->Consider this as an array,since elements in this array are numbers we can convert it to ascii using “chr()” and combine them with “+”
+
+Flag: crypto{ASCII_pr1nt4bl3}
+
+2)
+	
+	
+	 
